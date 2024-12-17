@@ -1,0 +1,42 @@
+
+CREATE TABLE 교수 (
+    교번 INT PRIMARY KEY,
+    교수명 VARCHAR(50)
+);
+
+
+CREATE TABLE 강의 (
+    강의실번호 INT PRIMARY KEY,
+    강의명 VARCHAR(100),
+    좌석수 INT,
+  
+);
+
+
+CREATE TABLE 교과목 (
+    과목번호 INT PRIMARY KEY,
+    과목명 VARCHAR(100),
+);
+
+CREATE TABLE 수강신청 (
+    ,
+    수강신청 VARCHAR(20),
+    수강취소 VARCHAR(20),
+    신청날짜 DATE,
+    취소날짜 DATE,
+    FOREIGN KEY (학번) REFERENCES 학생(학번),
+
+    );
+
+
+CREATE TABLE 학생 (
+    학생번호 INT PRIMARY KEY,
+    학생명 VARCHAR(50)
+);
+
+CREATE TABLE 멘토링 (
+    멘토 VARCHAR(50),
+    멘티 VARCHAR(50),
+    학번 INT,
+    FOREIGN KEY (학번) REFERENCES 학생(학번)
+);
